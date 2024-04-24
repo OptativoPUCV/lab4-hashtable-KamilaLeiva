@@ -113,6 +113,12 @@ Pair * nextMap(HashMap * map) {
       map->current = i;
       return map->buckets[i];
     }
+  for(i=0;i<map->current;i++){
+    if(map->buckets[i]!=NULL){
+      map->current = i;
+      return map->buckets[i];
+    }
+  }
   
   return NULL;
 }
