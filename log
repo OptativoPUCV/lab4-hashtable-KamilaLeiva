@@ -115,3 +115,16 @@ hashmap.c:99:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 a3e9d12
+Wed 24 Apr 2024 09:06:20 PM UTC: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:77:15: error: too few arguments to function ‘hash’
+   77 |   int index = hash(key);
+      |               ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+Compilation failed
+5cab7d1

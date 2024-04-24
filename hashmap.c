@@ -91,12 +91,11 @@ void eraseMap(HashMap * map,  char * key) {
       }
       index = (index + 1) % map->size;
   }
-  }
-  
-  
-
-
 }
+  
+  
+
+
 
 Pair * searchMap(HashMap * map,  char * key) {   
   int posp = hash(key,map->capacity);
