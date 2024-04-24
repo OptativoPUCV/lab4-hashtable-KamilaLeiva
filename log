@@ -97,3 +97,21 @@ Wed 24 Apr 2024 09:00:56 PM UTC:
  tests:  9|3
 total_score: 40/70
 6c828c3
+Wed 24 Apr 2024 09:06:10 PM UTC: 
+ hashmap.c | 23 ++++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:77:15: error: too few arguments to function ‘hash’
+   77 |   int index = hash(key);
+      |               ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+In file included from test.c:4:
+hashmap.c: At top level:
+hashmap.c:99:1: error: expected identifier or ‘(’ before ‘}’ token
+   99 | }
+      | ^
+Compilation failed
+a3e9d12

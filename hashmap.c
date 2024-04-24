@@ -74,18 +74,23 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {  
-  HashMap * mapa = (HashMap*)map;
-  int posp = hash(key,map->capacity);
-  while(mapa->buckets[posp]!=NULL){
-    if(is_equal(mapa->buckets[posp]->key,key)){
-      mapa->buckets[posp] = NULL;
-      mapa->size--;
-      return;
-    }
-    posp++;
-    if(posp==map->capacity){
-      posp=0;
-    }
+  int index = hash(key);
+
+  while (map->buckets[index]->key != NULL) {
+      if (strcmp(map->buckets[index]->key, key) == 0) {
+          // Liberar memoria de la clave
+          free(map->buckets[index]->key);
+          // No se libera la memoria del valor, asumiendo que la gestión de la memoria del valor es responsabilidad del usuario.
+          // Si el valor también necesita ser liberado, debes hacerlo aquí.
+
+          // Marcar la entrada como inválida
+          map->buckets[index]->key = NULL;
+          map->buckets[index]->value = NULL;
+          map->size--;
+          return;
+      }
+      index = (index + 1) % map->size;
+  }
   }
   
   
