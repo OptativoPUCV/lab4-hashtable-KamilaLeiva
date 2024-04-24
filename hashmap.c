@@ -59,8 +59,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1;
-  
   
   enlarge_called = 1; //no borrar (testing purposes)
 }
@@ -77,14 +75,24 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
   
+  
 
 
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
-    return NULL;
+  int posp = hash(key,map->capacity);
+  while(map->buckets[posp]!=NULL){
+    if(is_equal(map->buckets[posp]->key,key)){
+      map->current = posp;
+      return map->buckets[posp];
+    }
+    posp++;
+    if(posp==map->capacity){
+      posp=0;
+    }
+  }
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
