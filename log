@@ -156,3 +156,14 @@ Wed 24 Apr 2024 09:17:20 PM UTC:
  tests:  9|3
 total_score: 40/70
 86f9b26
+Sun 28 Apr 2024 02:44:17 AM UTC: 
+ hashmap.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:67:8: error: unused variable ‘size’ [-Werror=unused-variable]
+   67 |   long size = map->size;
+      |        ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f997b08
